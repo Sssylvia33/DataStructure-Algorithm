@@ -1,0 +1,74 @@
+> clear
+Cleared all towns
+> size
+Number of towns: 0
+> read "example-data.txt"
+** Commands from 'example-data.txt'
+> # Adding towns
+> add_town Hki Helsinki (3,0) 1000
+Helsinki: pos=(3,0), tax=1000, id=Hki
+> add_town Tpe Tampere (2,2) 500
+Tampere: pos=(2,2), tax=500, id=Tpe
+> add_town Ol Oulu (3,5) 400
+Oulu: pos=(3,5), tax=400, id=Ol
+> add_town Kuo Kuopio (6,3) 300
+Kuopio: pos=(6,3), tax=300, id=Kuo
+> add_town Tku Turku (1,1) 30
+Turku: pos=(1,1), tax=30, id=Tku
+> # Adding vassalships
+> add_vassalship Ol Kuo
+Added vassalship: Oulu -> Kuopio
+> add_vassalship Kuo Hki
+Added vassalship: Kuopio -> Helsinki
+> add_vassalship Tpe Hki
+Added vassalship: Tampere -> Helsinki
+> 
+** End of commands from 'example-data.txt'
+> size 
+Number of towns: 5
+> alphalist 
+1. Helsinki: pos=(3,0), tax=1000, id=Hki
+2. Kuopio: pos=(6,3), tax=300, id=Kuo
+3. Oulu: pos=(3,5), tax=400, id=Ol
+4. Tampere: pos=(2,2), tax=500, id=Tpe
+5. Turku: pos=(1,1), tax=30, id=Tku
+> mindist 
+Turku: pos=(1,1), tax=30, id=Tku
+> maxdist 
+Kuopio: pos=(6,3), tax=300, id=Kuo
+> distlist 
+1. Turku: pos=(1,1), tax=30, id=Tku
+2. Helsinki: pos=(3,0), tax=1000, id=Hki
+3. Tampere: pos=(2,2), tax=500, id=Tpe
+4. Oulu: pos=(3,5), tax=400, id=Ol
+5. Kuopio: pos=(6,3), tax=300, id=Kuo
+> nth_distance 2
+Helsinki: pos=(3,0), tax=1000, id=Hki
+> find Kuopio
+Kuopio: pos=(6,3), tax=300, id=Kuo
+> change_name Tpe Manse
+Manse: pos=(2,2), tax=500, id=Tpe
+> vassals Hki
+1. Kuopio: pos=(6,3), tax=300, id=Kuo
+2. Manse: pos=(2,2), tax=500, id=Tpe
+> taxer_path Tpe
+0.    Manse: pos=(2,2), tax=500, id=Tpe
+1. -> Helsinki: pos=(3,0), tax=1000, id=Hki
+> longest_vassal_path Hki
+0.    Helsinki: pos=(3,0), tax=1000, id=Hki
+1. -> Kuopio: pos=(6,3), tax=300, id=Kuo
+2. -> Oulu: pos=(3,5), tax=400, id=Ol
+> total_net_tax Tku
+Total net tax of Turku: 30
+> total_net_tax Ol
+Total net tax of Oulu: 360
+> total_net_tax Kuo
+Total net tax of Kuopio: 306
+> total_net_tax Hki
+Total net tax of Helsinki: 1084
+> remove Kuo
+Kuo removed.
+> vassals Hki
+1. Oulu: pos=(3,5), tax=400, id=Ol
+2. Manse: pos=(2,2), tax=500, id=Tpe
+> 

@@ -1,0 +1,116 @@
+> # Bigger test of shortest_route
+> clear
+Cleared all towns
+> size
+Number of towns: 0
+> read "towns-data.txt"
+** Commands from 'towns-data.txt'
+> # Add towns
+> add_town Slo Salo (3,2) 53188
+Salo: pos=(3,2), tax=53188, id=Slo
+> add_town Ktn Kaustinen (4,9) 4302
+Kaustinen: pos=(4,9), tax=4302, id=Ktn
+> add_town Sla Salla (9,15) 3600
+Salla: pos=(9,15), tax=3600, id=Sla
+> add_town Hmi Hyrynsalmi (8,11) 2341
+Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+> add_town Nnl Naantali (2,2) 19124
+Naantali: pos=(2,2), tax=19124, id=Nnl
+> add_town Kli Kolari (4,16) 3797
+Kolari: pos=(4,16), tax=3797, id=Kli
+> add_town Roi Rovaniemi (6,15) 62037
+Rovaniemi: pos=(6,15), tax=62037, id=Roi
+> add_town Lai Laihia (2,7) 8098
+Laihia: pos=(2,7), tax=8098, id=Lai
+> add_town Keu Keuruu (5,6) 9953
+Keuruu: pos=(5,6), tax=9953, id=Keu
+> add_town Ilm Iisalmi (7,9) 21675
+Iisalmi: pos=(7,9), tax=21675, id=Ilm
+> add_town Rma Rauma (2,4) 39612
+Rauma: pos=(2,4), tax=39612, id=Rma
+> add_town Hki Helsinki (5,2) 642045
+Helsinki: pos=(5,2), tax=642045, id=Hki
+> add_town Smo Sotkamo (8,10) 10452
+Sotkamo: pos=(8,10), tax=10452, id=Smo
+> add_town Iri Inari (8,19) 6830
+Inari: pos=(8,19), tax=6830, id=Iri
+> add_town Par Parikkala (9,5) 5030
+Parikkala: pos=(9,5), tax=5030, id=Par
+> add_town Lr Lappeenranta (8,4) 72685
+Lappeenranta: pos=(8,4), tax=72685, id=Lr
+> add_town Hma Hamina (7,3) 20554
+Hamina: pos=(7,3), tax=20554, id=Hma
+> add_town Sga Sottunga (1,2) 92
+Sottunga: pos=(1,2), tax=92, id=Sga
+> add_town Pmi Pelkosenniemi (7,16) 949
+Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+> add_town Mka Maaninka (7,8) 3748
+Maaninka: pos=(7,8), tax=3748, id=Mka
+> add_town Uki Utsjoki (7,21) 1247
+Utsjoki: pos=(7,21), tax=1247, id=Uki
+> add_town Kmo Kuusamo (9,13) 15391
+Kuusamo: pos=(9,13), tax=15391, id=Kmo
+> add_town Mhn Maarianhamina (0,2) 11658
+Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+> add_town Tpe Tampere (4,4) 230537
+Tampere: pos=(4,4), tax=230537, id=Tpe
+> add_town Hto Hailuoto (5,12) 981
+Hailuoto: pos=(5,12), tax=981, id=Hto
+> 
+** End of commands from 'towns-data.txt'
+> random_seed 40
+Random seed set to 40
+> random_road_network
+Added road network.
+> random_roads 5
+Added random 5 roads.
+> all_roads
+1: Hki <-> Hma (3)
+2: Hki <-> Mhn (5)
+3: Hki <-> Nnl (3)
+4: Hki <-> Sga (4)
+5: Hki <-> Slo (2)
+6: Hma <-> Ilm (6)
+7: Hma <-> Lr (2)
+8: Hma <-> Mka (5)
+9: Hma <-> Tpe (4)
+10: Hmi <-> Roi (6)
+11: Hmi <-> Smo (1)
+12: Hto <-> Ilm (5)
+13: Hto <-> Kli (5)
+14: Ilm <-> Keu (5)
+15: Iri <-> Sla (5)
+16: Keu <-> Ktn (4)
+17: Keu <-> Rma (5)
+18: Kmo <-> Smo (4)
+19: Ktn <-> Lai (4)
+20: Lai <-> Uki (19)
+21: Lr <-> Par (2)
+22: Mka <-> Tpe (7)
+23: Par <-> Smo (6)
+24: Pmi <-> Roi (2)
+25: Pmi <-> Sla (3)
+26: Pmi <-> Uki (5)
+> shortest_route Hki Uki
+0.    0: Helsinki: pos=(5,2), tax=642045, id=Hki
+1. -> 3: Hamina: pos=(7,3), tax=20554, id=Hma
+2. -> 5: Lappeenranta: pos=(8,4), tax=72685, id=Lr
+3. -> 7: Parikkala: pos=(9,5), tax=5030, id=Par
+4. -> 13: Sotkamo: pos=(8,10), tax=10452, id=Smo
+5. -> 14: Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+6. -> 20: Rovaniemi: pos=(6,15), tax=62037, id=Roi
+7. -> 22: Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+8. -> 27: Utsjoki: pos=(7,21), tax=1247, id=Uki
+> add_road Hki Keu
+Added road: Helsinki <-> Keuruu
+> shortest_route Hki Uki
+0.    0: Helsinki: pos=(5,2), tax=642045, id=Hki
+1. -> 3: Hamina: pos=(7,3), tax=20554, id=Hma
+2. -> 5: Lappeenranta: pos=(8,4), tax=72685, id=Lr
+3. -> 7: Parikkala: pos=(9,5), tax=5030, id=Par
+4. -> 13: Sotkamo: pos=(8,10), tax=10452, id=Smo
+5. -> 14: Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+6. -> 20: Rovaniemi: pos=(6,15), tax=62037, id=Roi
+7. -> 22: Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+8. -> 27: Utsjoki: pos=(7,21), tax=1247, id=Uki
+> 

@@ -1,0 +1,5 @@
+clear
+read "example-data.txt"
+all_roads
+trim_road_network
+all_roads

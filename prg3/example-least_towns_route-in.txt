@@ -1,0 +1,4 @@
+clear
+read "example-data.txt"
+all_roads
+least_towns_route Hki Ol

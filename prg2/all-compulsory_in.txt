@@ -1,0 +1,5 @@
+# testread in all compulsory tests
+testread "simpletest-in.txt" "simpletest-out.txt"
+testread "example-in.txt" "example-out.txt"
+testread "basictest-in.txt" "basictest-out.txt"
+testread "biggertest-in.txt" "biggertest-out.txt"

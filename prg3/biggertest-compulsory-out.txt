@@ -1,0 +1,134 @@
+> # Bigger test of compulsory operations
+> clear
+Cleared all towns
+> size
+Number of towns: 0
+> read "towns-data.txt"
+** Commands from 'towns-data.txt'
+> # Add towns
+> add_town Slo Salo (3,2) 53188
+Salo: pos=(3,2), tax=53188, id=Slo
+> add_town Ktn Kaustinen (4,9) 4302
+Kaustinen: pos=(4,9), tax=4302, id=Ktn
+> add_town Sla Salla (9,15) 3600
+Salla: pos=(9,15), tax=3600, id=Sla
+> add_town Hmi Hyrynsalmi (8,11) 2341
+Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+> add_town Nnl Naantali (2,2) 19124
+Naantali: pos=(2,2), tax=19124, id=Nnl
+> add_town Kli Kolari (4,16) 3797
+Kolari: pos=(4,16), tax=3797, id=Kli
+> add_town Roi Rovaniemi (6,15) 62037
+Rovaniemi: pos=(6,15), tax=62037, id=Roi
+> add_town Lai Laihia (2,7) 8098
+Laihia: pos=(2,7), tax=8098, id=Lai
+> add_town Keu Keuruu (5,6) 9953
+Keuruu: pos=(5,6), tax=9953, id=Keu
+> add_town Ilm Iisalmi (7,9) 21675
+Iisalmi: pos=(7,9), tax=21675, id=Ilm
+> add_town Rma Rauma (2,4) 39612
+Rauma: pos=(2,4), tax=39612, id=Rma
+> add_town Hki Helsinki (5,2) 642045
+Helsinki: pos=(5,2), tax=642045, id=Hki
+> add_town Smo Sotkamo (8,10) 10452
+Sotkamo: pos=(8,10), tax=10452, id=Smo
+> add_town Iri Inari (8,19) 6830
+Inari: pos=(8,19), tax=6830, id=Iri
+> add_town Par Parikkala (9,5) 5030
+Parikkala: pos=(9,5), tax=5030, id=Par
+> add_town Lr Lappeenranta (8,4) 72685
+Lappeenranta: pos=(8,4), tax=72685, id=Lr
+> add_town Hma Hamina (7,3) 20554
+Hamina: pos=(7,3), tax=20554, id=Hma
+> add_town Sga Sottunga (1,2) 92
+Sottunga: pos=(1,2), tax=92, id=Sga
+> add_town Pmi Pelkosenniemi (7,16) 949
+Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+> add_town Mka Maaninka (7,8) 3748
+Maaninka: pos=(7,8), tax=3748, id=Mka
+> add_town Uki Utsjoki (7,21) 1247
+Utsjoki: pos=(7,21), tax=1247, id=Uki
+> add_town Kmo Kuusamo (9,13) 15391
+Kuusamo: pos=(9,13), tax=15391, id=Kmo
+> add_town Mhn Maarianhamina (0,2) 11658
+Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+> add_town Tpe Tampere (4,4) 230537
+Tampere: pos=(4,4), tax=230537, id=Tpe
+> add_town Hto Hailuoto (5,12) 981
+Hailuoto: pos=(5,12), tax=981, id=Hto
+> 
+** End of commands from 'towns-data.txt'
+> all_roads
+No roads!
+> # Add some roads, forming an X, plus some extra roads
+> add_road Hki Tpe
+Added road: Helsinki <-> Tampere
+> add_road Smo Hto
+Added road: Sotkamo <-> Hailuoto
+> add_road Keu Ktn
+Added road: Keuruu <-> Kaustinen
+> add_road Roi Iri
+Added road: Rovaniemi <-> Inari
+> add_road Iri Uki
+Added road: Inari <-> Utsjoki
+> add_road Ktn Hto
+Added road: Kaustinen <-> Hailuoto
+> add_road Par Lr
+Added road: Parikkala <-> Lappeenranta
+> add_road Hto Roi
+Added road: Hailuoto <-> Rovaniemi
+> add_road Tpe Keu
+Added road: Tampere <-> Keuruu
+> add_road Smo Hmi
+Added road: Sotkamo <-> Hyrynsalmi
+> add_road Kli Roi
+Added road: Kolari <-> Rovaniemi
+> add_road Pmi Sla
+Added road: Pelkosenniemi <-> Salla
+> add_road Hto Hmi
+Added road: Hailuoto <-> Hyrynsalmi
+> # Check roads
+> all_roads
+1: Hki <-> Tpe (3)
+2: Hmi <-> Hto (4)
+3: Hmi <-> Smo (1)
+4: Hto <-> Ktn (4)
+5: Hto <-> Roi (4)
+6: Hto <-> Smo (5)
+7: Iri <-> Roi (6)
+8: Iri <-> Uki (3)
+9: Keu <-> Ktn (4)
+10: Keu <-> Tpe (3)
+11: Kli <-> Roi (3)
+12: Lr <-> Par (2)
+13: Pmi <-> Sla (3)
+> roads Hto
+1. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+2. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+3. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+4. Sotkamo: pos=(8,10), tax=10452, id=Smo
+> # Remove road
+> remove_road Hto Smo
+Removed road: Hailuoto <-> Sotkamo
+> # Find some paths
+> any_route Hki Uki
+0.    0: Helsinki: pos=(5,2), tax=642045, id=Hki
+1. -> 3: Tampere: pos=(4,4), tax=230537, id=Tpe
+2. -> 6: Keuruu: pos=(5,6), tax=9953, id=Keu
+3. -> 10: Kaustinen: pos=(4,9), tax=4302, id=Ktn
+4. -> 14: Hailuoto: pos=(5,12), tax=981, id=Hto
+5. -> 18: Rovaniemi: pos=(6,15), tax=62037, id=Roi
+6. -> 24: Inari: pos=(8,19), tax=6830, id=Iri
+7. -> 27: Utsjoki: pos=(7,21), tax=1247, id=Uki
+> any_route Kli Uki
+0.    0: Kolari: pos=(4,16), tax=3797, id=Kli
+1. -> 3: Rovaniemi: pos=(6,15), tax=62037, id=Roi
+2. -> 9: Inari: pos=(8,19), tax=6830, id=Iri
+3. -> 12: Utsjoki: pos=(7,21), tax=1247, id=Uki
+> any_route Smo Kli
+0.    0: Sotkamo: pos=(8,10), tax=10452, id=Smo
+1. -> 1: Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+2. -> 5: Hailuoto: pos=(5,12), tax=981, id=Hto
+3. -> 9: Rovaniemi: pos=(6,15), tax=62037, id=Roi
+4. -> 12: Kolari: pos=(4,16), tax=3797, id=Kli
+> 

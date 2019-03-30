@@ -1,0 +1,73 @@
+> # VERY simple basic test of all commands
+> # Clear the data structures and check that size is zero
+> clear
+Cleared all towns
+> size
+Number of towns: 0
+> # Test compulsory commands with empty data
+> all_towns
+No towns!
+> alphalist
+> distlist
+> mindist
+-- unknown --
+> maxdist
+-- unknown --
+> nth_distance 1
+-- unknown --
+> find Notown
+-- unknown --
+> # Add one town and test commands
+> add_town Tpe Tampere (3,4) 100
+Tampere: pos=(3,4), tax=100, id=Tpe
+> size
+Number of towns: 1
+> all_towns
+Tampere: pos=(3,4), tax=100, id=Tpe
+> alphalist
+Tampere: pos=(3,4), tax=100, id=Tpe
+> distlist
+Tampere: pos=(3,4), tax=100, id=Tpe
+> mindist
+Tampere: pos=(3,4), tax=100, id=Tpe
+> maxdist
+Tampere: pos=(3,4), tax=100, id=Tpe
+> nth_distance 1
+Tampere: pos=(3,4), tax=100, id=Tpe
+> find Tampere
+Tampere: pos=(3,4), tax=100, id=Tpe
+> change_name Tpe Manse
+Manse: pos=(3,4), tax=100, id=Tpe
+> find Tampere
+-- unknown --
+> find Manse
+Manse: pos=(3,4), tax=100, id=Tpe
+> add_town Tla Toijala (3,2) 10
+Toijala: pos=(3,2), tax=10, id=Tla
+> taxer_path Tla
+Toijala: pos=(3,2), tax=10, id=Tla
+> add_vassalship Tla Tpe
+Added vassalship: Toijala -> Manse
+> vassals Tpe
+Toijala: pos=(3,2), tax=10, id=Tla
+> vassals Tla
+No towns!
+> taxer_path Tla
+0.    Toijala: pos=(3,2), tax=10, id=Tla
+1. -> Manse: pos=(3,4), tax=100, id=Tpe
+> # Test non-compulsory commands
+> towns_from (2,2)
+1. Toijala: pos=(3,2), tax=10, id=Tla
+2. Manse: pos=(3,4), tax=100, id=Tpe
+> longest_vassal_path Tpe
+0.    Manse: pos=(3,4), tax=100, id=Tpe
+1. -> Toijala: pos=(3,2), tax=10, id=Tla
+> total_net_tax Tpe
+Total net tax of Manse: 101
+> total_net_tax Tla
+Total net tax of Toijala: 9
+> remove Tpe
+Tpe removed.
+> size
+Number of towns: 1
+> quit

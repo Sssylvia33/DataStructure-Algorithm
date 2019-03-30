@@ -1,0 +1,28 @@
+# Bigger test of compulsory operations
+clear
+size
+read "towns-data.txt"
+all_roads
+# Add some roads, forming an X, plus some extra roads
+add_road Hki Tpe
+add_road Smo Hto
+add_road Keu Ktn
+add_road Roi Iri
+add_road Iri Uki
+add_road Ktn Hto
+add_road Par Lr
+add_road Hto Roi
+add_road Tpe Keu
+add_road Smo Hmi
+add_road Kli Roi
+add_road Pmi Sla
+add_road Hto Hmi
+# Check roads
+all_roads
+roads Hto
+# Remove road
+remove_road Hto Smo
+# Find some paths
+any_route Hki Uki
+any_route Kli Uki
+any_route Smo Kli

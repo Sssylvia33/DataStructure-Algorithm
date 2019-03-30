@@ -1,0 +1,11 @@
+# Bigger test of least_towns_route
+clear
+size
+read "towns-data.txt"
+random_seed 20
+random_road_network
+all_roads
+least_towns_route Lai Uki
+# Add one road providing path with bigger distance but less towns
+add_road Lai Roi
+least_towns_route Lai Uki

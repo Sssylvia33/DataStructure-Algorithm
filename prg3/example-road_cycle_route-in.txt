@@ -1,0 +1,6 @@
+clear
+read "example-data.txt"
+all_roads
+road_cycle_route Tku
+remove_road Ol Kuo
+road_cycle_route Tku

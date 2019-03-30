@@ -1,0 +1,111 @@
+> clear
+Cleared all towns
+> size
+Number of towns: 0
+> # Read in example data
+> read "example-data.txt"
+** Commands from 'example-data.txt'
+> # Adding towns
+> add_town Hki Helsinki (3,0) 1000
+Helsinki: pos=(3,0), tax=1000, id=Hki
+> add_town Tpe Tampere (2,2) 500
+Tampere: pos=(2,2), tax=500, id=Tpe
+> add_town Ol Oulu (3,5) 400
+Oulu: pos=(3,5), tax=400, id=Ol
+> add_town Kuo Kuopio (6,3) 300
+Kuopio: pos=(6,3), tax=300, id=Kuo
+> add_town Tku Turku (1,1) 30
+Turku: pos=(1,1), tax=30, id=Tku
+> # Adding vassalships
+> add_vassalship Ol Kuo
+Added vassalship: Oulu -> Kuopio
+> add_vassalship Kuo Hki
+Added vassalship: Kuopio -> Helsinki
+> add_vassalship Tpe Hki
+Added vassalship: Tampere -> Helsinki
+> 
+** End of commands from 'example-data.txt'
+> # Do some basic tests
+> size
+Number of towns: 5
+> alphalist 
+1. Helsinki: pos=(3,0), tax=1000, id=Hki
+2. Kuopio: pos=(6,3), tax=300, id=Kuo
+3. Oulu: pos=(3,5), tax=400, id=Ol
+4. Tampere: pos=(2,2), tax=500, id=Tpe
+5. Turku: pos=(1,1), tax=30, id=Tku
+> mindist 
+Turku: pos=(1,1), tax=30, id=Tku
+> maxdist 
+Kuopio: pos=(6,3), tax=300, id=Kuo
+> distlist
+1. Turku: pos=(1,1), tax=30, id=Tku
+2. Helsinki: pos=(3,0), tax=1000, id=Hki
+3. Tampere: pos=(2,2), tax=500, id=Tpe
+4. Oulu: pos=(3,5), tax=400, id=Ol
+5. Kuopio: pos=(6,3), tax=300, id=Kuo
+> nth_distance 3
+Tampere: pos=(2,2), tax=500, id=Tpe
+> find Tampere
+Tampere: pos=(2,2), tax=500, id=Tpe
+> find Turku
+Turku: pos=(1,1), tax=30, id=Tku
+> # Add towns and try again
+> add_town Tku Turku (0,0) 10
+-- unknown --
+> add_town Roi Rovaniemi (5,7) 20
+Rovaniemi: pos=(5,7), tax=20, id=Roi
+> size
+Number of towns: 6
+> alphalist 
+1. Helsinki: pos=(3,0), tax=1000, id=Hki
+2. Kuopio: pos=(6,3), tax=300, id=Kuo
+3. Oulu: pos=(3,5), tax=400, id=Ol
+4. Rovaniemi: pos=(5,7), tax=20, id=Roi
+5. Tampere: pos=(2,2), tax=500, id=Tpe
+6. Turku: pos=(1,1), tax=30, id=Tku
+> mindist 
+Turku: pos=(1,1), tax=30, id=Tku
+> maxdist 
+Rovaniemi: pos=(5,7), tax=20, id=Roi
+> distlist
+1. Turku: pos=(1,1), tax=30, id=Tku
+2. Helsinki: pos=(3,0), tax=1000, id=Hki
+3. Tampere: pos=(2,2), tax=500, id=Tpe
+4. Oulu: pos=(3,5), tax=400, id=Ol
+5. Kuopio: pos=(6,3), tax=300, id=Kuo
+6. Rovaniemi: pos=(5,7), tax=20, id=Roi
+> nth_distance 3
+Tampere: pos=(2,2), tax=500, id=Tpe
+> find Tampere
+Tampere: pos=(2,2), tax=500, id=Tpe
+> find Turku
+Turku: pos=(1,1), tax=30, id=Tku
+> vassals Hki
+1. Kuopio: pos=(6,3), tax=300, id=Kuo
+2. Tampere: pos=(2,2), tax=500, id=Tpe
+> vassals Kuo
+Oulu: pos=(3,5), tax=400, id=Ol
+> vassals Tpe
+No towns!
+> vassals Tku
+No towns!
+> taxer_path Ol
+0.    Oulu: pos=(3,5), tax=400, id=Ol
+1. -> Kuopio: pos=(6,3), tax=300, id=Kuo
+2. -> Helsinki: pos=(3,0), tax=1000, id=Hki
+> taxer_path Kuo
+0.    Kuopio: pos=(6,3), tax=300, id=Kuo
+1. -> Helsinki: pos=(3,0), tax=1000, id=Hki
+> taxer_path Hki
+Helsinki: pos=(3,0), tax=1000, id=Hki
+> taxer_path Tku
+Turku: pos=(1,1), tax=30, id=Tku
+> change_name Tku Tampere
+Tampere: pos=(1,1), tax=30, id=Tku
+> find Tampere
+1. Tampere: pos=(1,1), tax=30, id=Tku
+2. Tampere: pos=(2,2), tax=500, id=Tpe
+> size
+Number of towns: 6
+> quit

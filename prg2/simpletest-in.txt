@@ -1,0 +1,39 @@
+# VERY simple basic test of all commands
+# Clear the data structures and check that size is zero
+clear
+size
+# Test compulsory commands with empty data
+all_towns
+alphalist
+distlist
+mindist
+maxdist
+nth_distance 1
+find Notown
+# Add one town and test commands
+add_town Tpe Tampere (3,4) 100
+size
+all_towns
+alphalist
+distlist
+mindist
+maxdist
+nth_distance 1
+find Tampere
+change_name Tpe Manse
+find Tampere
+find Manse
+add_town Tla Toijala (3,2) 10
+taxer_path Tla
+add_vassalship Tla Tpe
+vassals Tpe
+vassals Tla
+taxer_path Tla
+# Test non-compulsory commands
+towns_from (2,2)
+longest_vassal_path Tpe
+total_net_tax Tpe
+total_net_tax Tla
+remove Tpe
+size
+quit

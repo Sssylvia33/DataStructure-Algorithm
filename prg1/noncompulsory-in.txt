@@ -1,0 +1,26 @@
+# Test non-compulsory operations
+clear
+read "towns-data.txt"
+# Test remove
+size
+alphalist 
+mindist 
+maxdist 
+distlist
+nth_distance 3
+# Remove Maarianhamina, Iisalmi, and Utsjoki
+remove Maarianhamina
+remove Iisalmi
+remove Utsjoki
+size
+alphalist 
+mindist 
+maxdist 
+distlist
+nth_distance 3
+# Remove non-existing town
+remove Ouagadougou
+# Test towns_from
+find Tampere
+towns_from (20,20)
+quit

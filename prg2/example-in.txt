@@ -1,0 +1,20 @@
+clear
+size
+read "example-data.txt"
+size 
+alphalist 
+mindist 
+maxdist 
+distlist 
+nth_distance 2
+find Kuopio
+change_name Tpe Manse
+vassals Hki
+taxer_path Tpe
+longest_vassal_path Hki
+total_net_tax Tku
+total_net_tax Ol
+total_net_tax Kuo
+total_net_tax Hki
+remove Kuo
+vassals Hki

@@ -1,0 +1,9 @@
+# Bigger test of trim_road_network
+clear
+size
+read "towns-data.txt"
+random_seed 1094
+random_roads 200
+all_roads
+trim_road_network
+all_roads

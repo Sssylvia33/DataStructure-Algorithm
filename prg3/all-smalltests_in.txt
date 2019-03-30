@@ -1,0 +1,12 @@
+# Read in all small tests in one go
+testread "smalltest-compulsory-in.txt" "smalltest-compulsory-out.txt"
+clear
+testread "smalltest-least_towns_route-in.txt" "smalltest-least_towns_route-out.txt"
+clear
+testread "smalltest-road_cycle_route-in.txt" "smalltest-road_cycle_route-out.txt"
+clear
+testread "smalltest-shortest_route-in.txt" "smalltest-shortest_route-out.txt"
+clear
+testread "smalltest-trim_road_network-in.txt" "smalltest-trim_road_network-out.txt"
+clear
+# !!!! Remember to check EACH result above!

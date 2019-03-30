@@ -1,0 +1,12 @@
+# Read in all bigger tests in one go
+testread "biggertest-compulsory-in.txt" "biggertest-compulsory-out.txt"
+clear
+testread "biggertest-least_towns_route-in.txt" "biggertest-least_towns_route-out.txt"
+clear
+testread "biggertest-road_cycle_route-in.txt" "biggertest-road_cycle_route-out.txt"
+clear
+testread "biggertest-shortest_route-in.txt" "biggertest-shortest_route-out.txt"
+clear
+testread "biggertest-trim_road_network-in.txt" "biggertest-trim_road_network-out.txt"
+clear
+# !!!! Remember to check EACH result above!

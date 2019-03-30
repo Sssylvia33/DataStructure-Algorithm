@@ -1,0 +1,278 @@
+> # Test non-compulsory operations
+> clear
+Cleared all towns
+> read "towns-data.txt"
+** Commands from 'towns-data.txt'
+> # Add towns
+> add_town Slo Salo (3,2) 53188
+Salo: pos=(3,2), tax=53188, id=Slo
+> add_town Ktn Kaustinen (4,9) 4302
+Kaustinen: pos=(4,9), tax=4302, id=Ktn
+> add_town Sla Salla (9,15) 3600
+Salla: pos=(9,15), tax=3600, id=Sla
+> add_town Hmi Hyrynsalmi (8,11) 2341
+Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+> add_town Nnl Naantali (2,2) 19124
+Naantali: pos=(2,2), tax=19124, id=Nnl
+> add_town Kli Kolari (4,16) 3797
+Kolari: pos=(4,16), tax=3797, id=Kli
+> add_town Roi Rovaniemi (6,15) 62037
+Rovaniemi: pos=(6,15), tax=62037, id=Roi
+> add_town Lai Laihia (2,7) 8098
+Laihia: pos=(2,7), tax=8098, id=Lai
+> add_town Keu Keuruu (5,6) 9953
+Keuruu: pos=(5,6), tax=9953, id=Keu
+> add_town Ilm Iisalmi (7,9) 21675
+Iisalmi: pos=(7,9), tax=21675, id=Ilm
+> add_town Rma Rauma (2,4) 39612
+Rauma: pos=(2,4), tax=39612, id=Rma
+> add_town Hki Helsinki (5,2) 642045
+Helsinki: pos=(5,2), tax=642045, id=Hki
+> add_town Smo Sotkamo (8,10) 10452
+Sotkamo: pos=(8,10), tax=10452, id=Smo
+> add_town Iri Inari (8,19) 6830
+Inari: pos=(8,19), tax=6830, id=Iri
+> add_town Par Parikkala (9,5) 5030
+Parikkala: pos=(9,5), tax=5030, id=Par
+> add_town Lr Lappeenranta (8,4) 72685
+Lappeenranta: pos=(8,4), tax=72685, id=Lr
+> add_town Hma Hamina (7,3) 20554
+Hamina: pos=(7,3), tax=20554, id=Hma
+> add_town Sga Sottunga (1,2) 92
+Sottunga: pos=(1,2), tax=92, id=Sga
+> add_town Pmi Pelkosenniemi (7,16) 949
+Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+> add_town Mka Maaninka (7,8) 3748
+Maaninka: pos=(7,8), tax=3748, id=Mka
+> add_town Uki Utsjoki (7,21) 1247
+Utsjoki: pos=(7,21), tax=1247, id=Uki
+> add_town Kmo Kuusamo (9,13) 15391
+Kuusamo: pos=(9,13), tax=15391, id=Kmo
+> add_town Mhn Maarianhamina (0,2) 11658
+Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+> add_town Tpe Tampere (4,4) 230537
+Tampere: pos=(4,4), tax=230537, id=Tpe
+> add_town Hto Hailuoto (5,12) 981
+Hailuoto: pos=(5,12), tax=981, id=Hto
+> 
+** End of commands from 'towns-data.txt'
+> read "towns-vassals-data.txt"
+** Commands from 'towns-vassals-data.txt'
+> # Add vassalships
+> add_vassalship Hki Tpe
+Added vassalship: Helsinki -> Tampere
+> add_vassalship Rma Tpe
+Added vassalship: Rauma -> Tampere
+> add_vassalship Keu Par
+Added vassalship: Keuruu -> Parikkala
+> add_vassalship Par Lr
+Added vassalship: Parikkala -> Lappeenranta
+> add_vassalship Hma Hki
+Added vassalship: Hamina -> Helsinki
+> add_vassalship Lr Hma
+Added vassalship: Lappeenranta -> Hamina
+> add_vassalship Sga Mhn
+Added vassalship: Sottunga -> Maarianhamina
+> add_vassalship Nnl Slo
+Added vassalship: Naantali -> Salo
+> add_vassalship Slo Hki
+Added vassalship: Salo -> Helsinki
+> add_vassalship Uki Iri
+Added vassalship: Utsjoki -> Inari
+> add_vassalship Kli Roi
+Added vassalship: Kolari -> Rovaniemi
+> add_vassalship Pmi Iri
+Added vassalship: Pelkosenniemi -> Inari
+> add_vassalship Sla Roi
+Added vassalship: Salla -> Rovaniemi
+> add_vassalship Iri Roi
+Added vassalship: Inari -> Rovaniemi
+> add_vassalship Kmo Hto
+Added vassalship: Kuusamo -> Hailuoto
+> add_vassalship Hmi Hto
+Added vassalship: Hyrynsalmi -> Hailuoto
+> add_vassalship Smo Hto
+Added vassalship: Sotkamo -> Hailuoto
+> add_vassalship Mka Ilm
+Added vassalship: Maaninka -> Iisalmi
+> add_vassalship Ilm Hto
+Added vassalship: Iisalmi -> Hailuoto
+> add_vassalship Ktn Hto
+Added vassalship: Kaustinen -> Hailuoto
+> 
+** End of commands from 'towns-vassals-data.txt'
+> # Test remove
+> size
+Number of towns: 25
+> alphalist 
+1. Hailuoto: pos=(5,12), tax=981, id=Hto
+2. Hamina: pos=(7,3), tax=20554, id=Hma
+3. Helsinki: pos=(5,2), tax=642045, id=Hki
+4. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+5. Iisalmi: pos=(7,9), tax=21675, id=Ilm
+6. Inari: pos=(8,19), tax=6830, id=Iri
+7. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+8. Keuruu: pos=(5,6), tax=9953, id=Keu
+9. Kolari: pos=(4,16), tax=3797, id=Kli
+10. Kuusamo: pos=(9,13), tax=15391, id=Kmo
+11. Laihia: pos=(2,7), tax=8098, id=Lai
+12. Lappeenranta: pos=(8,4), tax=72685, id=Lr
+13. Maaninka: pos=(7,8), tax=3748, id=Mka
+14. Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+15. Naantali: pos=(2,2), tax=19124, id=Nnl
+16. Parikkala: pos=(9,5), tax=5030, id=Par
+17. Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+18. Rauma: pos=(2,4), tax=39612, id=Rma
+19. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+20. Salla: pos=(9,15), tax=3600, id=Sla
+21. Salo: pos=(3,2), tax=53188, id=Slo
+22. Sotkamo: pos=(8,10), tax=10452, id=Smo
+23. Sottunga: pos=(1,2), tax=92, id=Sga
+24. Tampere: pos=(4,4), tax=230537, id=Tpe
+25. Utsjoki: pos=(7,21), tax=1247, id=Uki
+> mindist 
+Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+> maxdist 
+Utsjoki: pos=(7,21), tax=1247, id=Uki
+> distlist
+1. Maarianhamina: pos=(0,2), tax=11658, id=Mhn
+2. Sottunga: pos=(1,2), tax=92, id=Sga
+3. Naantali: pos=(2,2), tax=19124, id=Nnl
+4. Salo: pos=(3,2), tax=53188, id=Slo
+5. Rauma: pos=(2,4), tax=39612, id=Rma
+6. Helsinki: pos=(5,2), tax=642045, id=Hki
+7. Tampere: pos=(4,4), tax=230537, id=Tpe
+8. Laihia: pos=(2,7), tax=8098, id=Lai
+9. Hamina: pos=(7,3), tax=20554, id=Hma
+10. Keuruu: pos=(5,6), tax=9953, id=Keu
+11. Lappeenranta: pos=(8,4), tax=72685, id=Lr
+12. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+13. Parikkala: pos=(9,5), tax=5030, id=Par
+14. Maaninka: pos=(7,8), tax=3748, id=Mka
+15. Iisalmi: pos=(7,9), tax=21675, id=Ilm
+16. Hailuoto: pos=(5,12), tax=981, id=Hto
+17. Sotkamo: pos=(8,10), tax=10452, id=Smo
+18. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+19. Kolari: pos=(4,16), tax=3797, id=Kli
+20. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+21. Kuusamo: pos=(9,13), tax=15391, id=Kmo
+22. Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+23. Salla: pos=(9,15), tax=3600, id=Sla
+24. Inari: pos=(8,19), tax=6830, id=Iri
+25. Utsjoki: pos=(7,21), tax=1247, id=Uki
+> nth_distance 3
+Naantali: pos=(2,2), tax=19124, id=Nnl
+> # Remove Maarianhamina, Iisalmi, and Utsjoki
+> remove Mhn
+Mhn removed.
+> remove Ilm
+Ilm removed.
+> remove Uki
+Uki removed.
+> size
+Number of towns: 22
+> alphalist 
+1. Hailuoto: pos=(5,12), tax=981, id=Hto
+2. Hamina: pos=(7,3), tax=20554, id=Hma
+3. Helsinki: pos=(5,2), tax=642045, id=Hki
+4. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+5. Inari: pos=(8,19), tax=6830, id=Iri
+6. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+7. Keuruu: pos=(5,6), tax=9953, id=Keu
+8. Kolari: pos=(4,16), tax=3797, id=Kli
+9. Kuusamo: pos=(9,13), tax=15391, id=Kmo
+10. Laihia: pos=(2,7), tax=8098, id=Lai
+11. Lappeenranta: pos=(8,4), tax=72685, id=Lr
+12. Maaninka: pos=(7,8), tax=3748, id=Mka
+13. Naantali: pos=(2,2), tax=19124, id=Nnl
+14. Parikkala: pos=(9,5), tax=5030, id=Par
+15. Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+16. Rauma: pos=(2,4), tax=39612, id=Rma
+17. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+18. Salla: pos=(9,15), tax=3600, id=Sla
+19. Salo: pos=(3,2), tax=53188, id=Slo
+20. Sotkamo: pos=(8,10), tax=10452, id=Smo
+21. Sottunga: pos=(1,2), tax=92, id=Sga
+22. Tampere: pos=(4,4), tax=230537, id=Tpe
+> mindist 
+Sottunga: pos=(1,2), tax=92, id=Sga
+> maxdist 
+Inari: pos=(8,19), tax=6830, id=Iri
+> distlist
+1. Sottunga: pos=(1,2), tax=92, id=Sga
+2. Naantali: pos=(2,2), tax=19124, id=Nnl
+3. Salo: pos=(3,2), tax=53188, id=Slo
+4. Rauma: pos=(2,4), tax=39612, id=Rma
+5. Helsinki: pos=(5,2), tax=642045, id=Hki
+6. Tampere: pos=(4,4), tax=230537, id=Tpe
+7. Laihia: pos=(2,7), tax=8098, id=Lai
+8. Hamina: pos=(7,3), tax=20554, id=Hma
+9. Keuruu: pos=(5,6), tax=9953, id=Keu
+10. Lappeenranta: pos=(8,4), tax=72685, id=Lr
+11. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+12. Parikkala: pos=(9,5), tax=5030, id=Par
+13. Maaninka: pos=(7,8), tax=3748, id=Mka
+14. Hailuoto: pos=(5,12), tax=981, id=Hto
+15. Sotkamo: pos=(8,10), tax=10452, id=Smo
+16. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+17. Kolari: pos=(4,16), tax=3797, id=Kli
+18. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+19. Kuusamo: pos=(9,13), tax=15391, id=Kmo
+20. Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+21. Salla: pos=(9,15), tax=3600, id=Sla
+22. Inari: pos=(8,19), tax=6830, id=Iri
+> nth_distance 3
+Salo: pos=(3,2), tax=53188, id=Slo
+> # Remove non-existing town
+> remove xxxx
+-- unknown --
+> # Test towns_from
+> find Tampere
+Tampere: pos=(4,4), tax=230537, id=Tpe
+> towns_from (20,20)
+1. Inari: pos=(8,19), tax=6830, id=Iri
+2. Salla: pos=(9,15), tax=3600, id=Sla
+3. Pelkosenniemi: pos=(7,16), tax=949, id=Pmi
+4. Kuusamo: pos=(9,13), tax=15391, id=Kmo
+5. Rovaniemi: pos=(6,15), tax=62037, id=Roi
+6. Kolari: pos=(4,16), tax=3797, id=Kli
+7. Hyrynsalmi: pos=(8,11), tax=2341, id=Hmi
+8. Sotkamo: pos=(8,10), tax=10452, id=Smo
+9. Hailuoto: pos=(5,12), tax=981, id=Hto
+10. Maaninka: pos=(7,8), tax=3748, id=Mka
+11. Parikkala: pos=(9,5), tax=5030, id=Par
+12. Kaustinen: pos=(4,9), tax=4302, id=Ktn
+13. Lappeenranta: pos=(8,4), tax=72685, id=Lr
+14. Keuruu: pos=(5,6), tax=9953, id=Keu
+15. Hamina: pos=(7,3), tax=20554, id=Hma
+16. Laihia: pos=(2,7), tax=8098, id=Lai
+17. Tampere: pos=(4,4), tax=230537, id=Tpe
+18. Helsinki: pos=(5,2), tax=642045, id=Hki
+19. Rauma: pos=(2,4), tax=39612, id=Rma
+20. Salo: pos=(3,2), tax=53188, id=Slo
+21. Naantali: pos=(2,2), tax=19124, id=Nnl
+22. Sottunga: pos=(1,2), tax=92, id=Sga
+> longest_vassal_path Lr
+0.    Lappeenranta: pos=(8,4), tax=72685, id=Lr
+1. -> Parikkala: pos=(9,5), tax=5030, id=Par
+2. -> Keuruu: pos=(5,6), tax=9953, id=Keu
+> longest_vassal_path Tpe
+0.    Tampere: pos=(4,4), tax=230537, id=Tpe
+1. -> Helsinki: pos=(5,2), tax=642045, id=Hki
+2. -> Hamina: pos=(7,3), tax=20554, id=Hma
+3. -> Lappeenranta: pos=(8,4), tax=72685, id=Lr
+4. -> Parikkala: pos=(9,5), tax=5030, id=Par
+5. -> Keuruu: pos=(5,6), tax=9953, id=Keu
+> longest_vassal_path Rma
+Rauma: pos=(2,4), tax=39612, id=Rma
+> total_net_tax Lai
+Total net tax of Laihia: 8098
+> total_net_tax Keu
+Total net tax of Keuruu: 8958
+> total_net_tax Par
+Total net tax of Parikkala: 5423
+> total_net_tax Hki
+Total net tax of Helsinki: 585309
+> total_net_tax Tpe
+Total net tax of Tampere: 299532
+> quit

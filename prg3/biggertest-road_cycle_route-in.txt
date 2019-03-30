@@ -1,0 +1,13 @@
+# Bigger test of road_cycle_route
+clear
+size
+read "towns-data.txt"
+random_seed 10
+random_road_network
+random_roads 1
+all_roads
+road_cycle_route Uki
+# Remove one road from cycle
+remove_road Roi Iri
+# Check road cycles from One again
+road_cycle_route Uki

@@ -1,0 +1,10 @@
+clear
+read "example-data.txt"
+all_roads
+roads Tpe
+any_route Tku Hki
+remove_road Tpe Hki
+roads Tpe
+any_route Tku Hki
+clear_roads
+all_roads

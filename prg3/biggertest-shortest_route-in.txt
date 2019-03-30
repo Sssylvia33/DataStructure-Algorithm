@@ -1,0 +1,11 @@
+# Bigger test of shortest_route
+clear
+size
+read "towns-data.txt"
+random_seed 40
+random_road_network
+random_roads 5
+all_roads
+shortest_route Hki Uki
+add_road Hki Keu
+shortest_route Hki Uki

@@ -1,0 +1,35 @@
+# Test non-compulsory operations
+clear
+read "towns-data.txt"
+read "towns-vassals-data.txt"
+# Test remove
+size
+alphalist 
+mindist 
+maxdist 
+distlist
+nth_distance 3
+# Remove Maarianhamina, Iisalmi, and Utsjoki
+remove Mhn
+remove Ilm
+remove Uki
+size
+alphalist 
+mindist 
+maxdist 
+distlist
+nth_distance 3
+# Remove non-existing town
+remove xxxx
+# Test towns_from
+find Tampere
+towns_from (20,20)
+longest_vassal_path Lr
+longest_vassal_path Tpe
+longest_vassal_path Rma
+total_net_tax Lai
+total_net_tax Keu
+total_net_tax Par
+total_net_tax Hki
+total_net_tax Tpe
+quit

@@ -1,0 +1,20 @@
+# Read in a bigger set of towns
+clear
+read "towns-data.txt"
+read "towns-vassals-data.txt"
+# Do tests
+size
+alphalist 
+mindist 
+maxdist 
+distlist
+nth_distance 3
+find Tampere
+find Turku
+vassals Hto
+vassals Iri
+vassals xxx
+taxer_path Keu
+taxer_path Lai
+taxer_path Pmi
+quit

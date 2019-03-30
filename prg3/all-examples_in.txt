@@ -1,0 +1,12 @@
+# Read in all example tests in one go
+testread "example-compulsory-in.txt" "example-compulsory-out.txt"
+clear
+testread "example-least_towns_route-in.txt" "example-least_towns_route-out.txt"
+clear
+testread "example-road_cycle_route-in.txt" "example-road_cycle_route-out.txt"
+clear
+testread "example-shortest_route-in.txt" "example-shortest_route-out.txt"
+clear
+testread "example-trim_road_network-in.txt" "example-trim_road_network-out.txt"
+clear
+# !!!! Remember to check EACH result above!
